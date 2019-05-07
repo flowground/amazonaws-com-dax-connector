@@ -1,0 +1,72 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "ParameterGroupName": {
+                    "description": "The name of the parameter group.",
+                    "type": "string"
+                },
+                "ParameterNameValues": {
+                    "description": "An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.",
+                    "items": {
+                        "description": "An individual DAX parameter.",
+                        "properties": {
+                            "ParameterName": {
+                                "description": "The name of the parameter.",
+                                "type": "string"
+                            },
+                            "ParameterValue": {
+                                "description": "The value of the parameter.",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "ParameterGroupName",
+                "ParameterNameValues"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

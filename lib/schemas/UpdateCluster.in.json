@@ -1,0 +1,80 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "ClusterName": {
+                    "description": "The name of the DAX cluster to be modified.",
+                    "type": "string"
+                },
+                "Description": {
+                    "description": "A description of the changes being made to the cluster.",
+                    "type": "string"
+                },
+                "NotificationTopicArn": {
+                    "description": "The Amazon Resource Name (ARN) that identifies the topic.",
+                    "type": "string"
+                },
+                "NotificationTopicStatus": {
+                    "description": "The current state of the topic.",
+                    "type": "string"
+                },
+                "ParameterGroupName": {
+                    "description": "The name of a parameter group for this cluster.",
+                    "type": "string"
+                },
+                "PreferredMaintenanceWindow": {
+                    "description": "A range of time when maintenance of DAX cluster software will be performed. For example: <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.",
+                    "type": "string"
+                },
+                "SecurityGroupIds": {
+                    "description": "A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "ClusterName"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

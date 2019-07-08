@@ -20,7 +20,7 @@
                 "label": "Custom Server URL",
                 "viewClass": "TextFieldView"
             },
-            "hmac": {
+            "auth_hmac": {
                 "label": "Authorization (hmac)",
                 "viewClass": "TextFieldView",
                 "note": "Amazon Signature authorization v4"
@@ -38,7 +38,7 @@
     "actions": {
         "CreateCluster": {
             "main": "./lib/actions/CreateCluster.js",
-            "title": "Creates a DAX cluster. All nodes in the cluster run the same DAX caching software.",
+            "title": "CreateCluster",
             "description": "Creates a DAX cluster. All nodes in the cluster run the same DAX caching software.",
             "fields": {
                 "verbose": {
@@ -55,7 +55,7 @@
         },
         "CreateParameterGroup": {
             "main": "./lib/actions/CreateParameterGroup.js",
-            "title": "Creates a new parameter group. A parameter group is a collection of parameters that you apply to all of the nodes in a DAX cluster.",
+            "title": "CreateParameterGroup",
             "description": "Creates a new parameter group. A parameter group is a collection of parameters that you apply to all of the nodes in a DAX cluster.",
             "fields": {
                 "verbose": {
@@ -72,7 +72,7 @@
         },
         "CreateSubnetGroup": {
             "main": "./lib/actions/CreateSubnetGroup.js",
-            "title": "Creates a new subnet group.",
+            "title": "CreateSubnetGroup",
             "description": "Creates a new subnet group.",
             "fields": {
                 "verbose": {
@@ -89,8 +89,8 @@
         },
         "DecreaseReplicationFactor": {
             "main": "./lib/actions/DecreaseReplicationFactor.js",
-            "title": "<p>Removes one or more nodes from a DAX cluster.</p> <note> <p>You cannot use <code>DecreaseReplicationFactor</code> to remove the last node in a DAX cluster. If you need to do this, use <code>DeleteCluster</code> instead.</p> </note>",
-            "description": "<p>Removes one or more nodes from a DAX cluster.</p> <note> <p>You cannot use <code>DecreaseReplicationFactor</code> to remove the last node in a DAX cluster. If you need to do this, use <code>DeleteCluster</code> instead.</p> </note>",
+            "title": "DecreaseReplicationFactor",
+            "description": "Removes one or more nodes from a DAX cluster.\n\nYou cannot use DecreaseReplicationFactor to remove the last node in a DAX\ncluster. If you need to do this, use DeleteCluster instead.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -106,7 +106,7 @@
         },
         "DeleteCluster": {
             "main": "./lib/actions/DeleteCluster.js",
-            "title": "Deletes a previously provisioned DAX cluster. <i>DeleteCluster</i> deletes all associated nodes, node endpoints and the DAX cluster itself. When you receive a successful response from this action, DAX immediately begins deleting the cluster; you cannot cancel or revert this action.",
+            "title": "DeleteCluster",
             "description": "Deletes a previously provisioned DAX cluster. <i>DeleteCluster</i> deletes all associated nodes, node endpoints and the DAX cluster itself. When you receive a successful response from this action, DAX immediately begins deleting the cluster; you cannot cancel or revert this action.",
             "fields": {
                 "verbose": {
@@ -123,7 +123,7 @@
         },
         "DeleteParameterGroup": {
             "main": "./lib/actions/DeleteParameterGroup.js",
-            "title": "Deletes the specified parameter group. You cannot delete a parameter group if it is associated with any DAX clusters.",
+            "title": "DeleteParameterGroup",
             "description": "Deletes the specified parameter group. You cannot delete a parameter group if it is associated with any DAX clusters.",
             "fields": {
                 "verbose": {
@@ -140,8 +140,8 @@
         },
         "DeleteSubnetGroup": {
             "main": "./lib/actions/DeleteSubnetGroup.js",
-            "title": "<p>Deletes a subnet group.</p> <note> <p>You cannot delete a subnet group if it is associated with any DAX clusters.</p> </note>",
-            "description": "<p>Deletes a subnet group.</p> <note> <p>You cannot delete a subnet group if it is associated with any DAX clusters.</p> </note>",
+            "title": "DeleteSubnetGroup",
+            "description": "Deletes a subnet group.\n\nYou cannot delete a subnet group if it is associated with any DAX clusters.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -157,8 +157,8 @@
         },
         "DescribeClusters": {
             "main": "./lib/actions/DescribeClusters.js",
-            "title": "<p>Returns information about all provisioned DAX clusters if no cluster identifier is specified, or about a specific DAX cluster if a cluster identifier is supplied.</p> <p>If the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully provisioned.</p> <p>If the cluster is in the DELETING state, only cluster level information will be displayed.</p> <p>If nodes are currently being added to the DAX cluster, node endpoint information and creation time for the additional nodes will not be displayed until they are completely provisioned. When the DAX cluster state is <i>available</i>, the cluster is ready for use.</p> <p>If nodes are currently being removed from the DAX cluster, no endpoint information for the removed nodes is displayed.</p>",
-            "description": "<p>Returns information about all provisioned DAX clusters if no cluster identifier is specified, or about a specific DAX cluster if a cluster identifier is supplied.</p> <p>If the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully provisioned.</p> <p>If the cluster is in the DELETING state, only cluster level information will be displayed.</p> <p>If nodes are currently being added to the DAX cluster, node endpoint information and creation time for the additional nodes will not be displayed until they are completely provisioned. When the DAX cluster state is <i>available</i>, the cluster is ready for use.</p> <p>If nodes are currently being removed from the DAX cluster, no endpoint information for the removed nodes is displayed.</p>",
+            "title": "DescribeClusters",
+            "description": "Returns information about all provisioned DAX clusters if no cluster identifier\nis specified, or about a specific DAX cluster if a cluster identifier is\nsupplied.\n\nIf the cluster is in the CREATING state, only cluster level information will be\ndisplayed until all of the nodes are successfully provisioned.\n\nIf the cluster is in the DELETING state, only cluster level information will be\ndisplayed.\n\nIf nodes are currently being added to the DAX cluster, node endpoint information\nand creation time for the additional nodes will not be displayed until they are\ncompletely provisioned. When the DAX cluster state is available, the cluster is\nready for use.\n\nIf nodes are currently being removed from the DAX cluster, no endpoint\ninformation for the removed nodes is displayed.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -174,7 +174,7 @@
         },
         "DescribeDefaultParameters": {
             "main": "./lib/actions/DescribeDefaultParameters.js",
-            "title": "Returns the default system parameter information for the DAX caching software.",
+            "title": "DescribeDefaultParameters",
             "description": "Returns the default system parameter information for the DAX caching software.",
             "fields": {
                 "verbose": {
@@ -191,8 +191,8 @@
         },
         "DescribeEvents": {
             "main": "./lib/actions/DescribeEvents.js",
-            "title": "<p>Returns events related to DAX clusters and parameter groups. You can obtain events specific to a particular DAX cluster or parameter group by providing the name as a parameter.</p> <p>By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.</p>",
-            "description": "<p>Returns events related to DAX clusters and parameter groups. You can obtain events specific to a particular DAX cluster or parameter group by providing the name as a parameter.</p> <p>By default, only the events occurring within the last hour are returned; however, you can retrieve up to 14 days' worth of events if necessary.</p>",
+            "title": "DescribeEvents",
+            "description": "Returns events related to DAX clusters and parameter groups. You can obtain\nevents specific to a particular DAX cluster or parameter group by providing the\nname as a parameter.\n\nBy default, only the events occurring within the last hour are returned;\nhowever, you can retrieve up to 14 days' worth of events if necessary.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -208,7 +208,7 @@
         },
         "DescribeParameterGroups": {
             "main": "./lib/actions/DescribeParameterGroups.js",
-            "title": "Returns a list of parameter group descriptions. If a parameter group name is specified, the list will contain only the descriptions for that group.",
+            "title": "DescribeParameterGroups",
             "description": "Returns a list of parameter group descriptions. If a parameter group name is specified, the list will contain only the descriptions for that group.",
             "fields": {
                 "verbose": {
@@ -225,7 +225,7 @@
         },
         "DescribeParameters": {
             "main": "./lib/actions/DescribeParameters.js",
-            "title": "Returns the detailed parameter list for a particular parameter group.",
+            "title": "DescribeParameters",
             "description": "Returns the detailed parameter list for a particular parameter group.",
             "fields": {
                 "verbose": {
@@ -242,7 +242,7 @@
         },
         "DescribeSubnetGroups": {
             "main": "./lib/actions/DescribeSubnetGroups.js",
-            "title": "Returns a list of subnet group descriptions. If a subnet group name is specified, the list will contain only the description of that group.",
+            "title": "DescribeSubnetGroups",
             "description": "Returns a list of subnet group descriptions. If a subnet group name is specified, the list will contain only the description of that group.",
             "fields": {
                 "verbose": {
@@ -259,7 +259,7 @@
         },
         "IncreaseReplicationFactor": {
             "main": "./lib/actions/IncreaseReplicationFactor.js",
-            "title": "Adds one or more nodes to a DAX cluster.",
+            "title": "IncreaseReplicationFactor",
             "description": "Adds one or more nodes to a DAX cluster.",
             "fields": {
                 "verbose": {
@@ -276,7 +276,7 @@
         },
         "ListTags": {
             "main": "./lib/actions/ListTags.js",
-            "title": "List all of the tags for a DAX cluster. You can call <code>ListTags</code> up to 10 times per second, per account.",
+            "title": "ListTags",
             "description": "List all of the tags for a DAX cluster. You can call <code>ListTags</code> up to 10 times per second, per account.",
             "fields": {
                 "verbose": {
@@ -293,7 +293,7 @@
         },
         "RebootNode": {
             "main": "./lib/actions/RebootNode.js",
-            "title": "Reboots a single node of a DAX cluster. The reboot action takes place as soon as possible. During the reboot, the node status is set to REBOOTING.",
+            "title": "RebootNode",
             "description": "Reboots a single node of a DAX cluster. The reboot action takes place as soon as possible. During the reboot, the node status is set to REBOOTING.",
             "fields": {
                 "verbose": {
@@ -310,7 +310,7 @@
         },
         "TagResource": {
             "main": "./lib/actions/TagResource.js",
-            "title": "Associates a set of tags with a DAX resource. You can call <code>TagResource</code> up to 5 times per second, per account. ",
+            "title": "TagResource",
             "description": "Associates a set of tags with a DAX resource. You can call <code>TagResource</code> up to 5 times per second, per account. ",
             "fields": {
                 "verbose": {
@@ -327,7 +327,7 @@
         },
         "UntagResource": {
             "main": "./lib/actions/UntagResource.js",
-            "title": "Removes the association of tags from a DAX resource. You can call <code>UntagResource</code> up to 5 times per second, per account. ",
+            "title": "UntagResource",
             "description": "Removes the association of tags from a DAX resource. You can call <code>UntagResource</code> up to 5 times per second, per account. ",
             "fields": {
                 "verbose": {
@@ -344,7 +344,7 @@
         },
         "UpdateCluster": {
             "main": "./lib/actions/UpdateCluster.js",
-            "title": "Modifies the settings for a DAX cluster. You can use this action to change one or more cluster configuration parameters by specifying the parameters and the new values.",
+            "title": "UpdateCluster",
             "description": "Modifies the settings for a DAX cluster. You can use this action to change one or more cluster configuration parameters by specifying the parameters and the new values.",
             "fields": {
                 "verbose": {
@@ -361,7 +361,7 @@
         },
         "UpdateParameterGroup": {
             "main": "./lib/actions/UpdateParameterGroup.js",
-            "title": "Modifies the parameters of a parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.",
+            "title": "UpdateParameterGroup",
             "description": "Modifies the parameters of a parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.",
             "fields": {
                 "verbose": {
@@ -378,7 +378,7 @@
         },
         "UpdateSubnetGroup": {
             "main": "./lib/actions/UpdateSubnetGroup.js",
-            "title": "Modifies an existing subnet group.",
+            "title": "UpdateSubnetGroup",
             "description": "Modifies an existing subnet group.",
             "fields": {
                 "verbose": {
